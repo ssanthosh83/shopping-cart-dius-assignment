@@ -1,0 +1,166 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Product</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.santhosh.computerstore.models</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Product (org.santhosh.computerstore.models)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Product</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    46.2%
+  </span>
+  <span class="absValue">
+    (6/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    51.5%
+  </span>
+  <span class="absValue">
+    (17/ 33)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.santhosh.computerstore.models;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.Objects;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;public class Product {
+<i>6</i>&nbsp;    private String sku;
+<i>7</i>&nbsp;    private String name;
+<i>8</i>&nbsp;    private Double price;
+<i>9</i>&nbsp;    private Double discountedPrice;
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    public Product(String sku, String name, Double price) {</b>
+<b class="fc"><i>12</i>&nbsp;        this.sku = sku;</b>
+<b class="fc"><i>13</i>&nbsp;        this.name = name;</b>
+<b class="fc"><i>14</i>&nbsp;        this.price = price;</b>
+<b class="fc"><i>15</i>&nbsp;        this.discountedPrice = 0.0;</b>
+<b class="fc"><i>16</i>&nbsp;    }</b>
+<i>17</i>&nbsp;
+<b class="fc"><i>18</i>&nbsp;    public Product(Sku sku){</b>
+<b class="fc"><i>19</i>&nbsp;        this.sku = sku.toString();</b>
+<b class="fc"><i>20</i>&nbsp;        this.name = sku.getDescription();</b>
+<b class="fc"><i>21</i>&nbsp;        this.price = sku.getPrice();</b>
+<b class="fc"><i>22</i>&nbsp;        this.discountedPrice = 0.0;</b>
+<b class="fc"><i>23</i>&nbsp;    }</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    public String getSku() {
+<b class="fc"><i>26</i>&nbsp;        return sku;</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    public void setSku(String sku) {
+<b class="nc"><i>31</i>&nbsp;        this.sku = sku;</b>
+<b class="nc"><i>32</i>&nbsp;    }</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    public String getName() {
+<b class="nc"><i>35</i>&nbsp;        return name;</b>
+<i>36</i>&nbsp;    }
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    public void setName(String name) {
+<b class="nc"><i>39</i>&nbsp;        this.name = name;</b>
+<b class="nc"><i>40</i>&nbsp;    }</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    public Double getPrice() {
+<b class="fc"><i>43</i>&nbsp;        return price;</b>
+<i>44</i>&nbsp;    }
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    public void setPrice(Double price) {
+<b class="nc"><i>47</i>&nbsp;        this.price = price;</b>
+<b class="nc"><i>48</i>&nbsp;    }</b>
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    public Double getDiscountedPrice() {
+<b class="fc"><i>51</i>&nbsp;        return discountedPrice;</b>
+<i>52</i>&nbsp;    }
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    public void setDiscountedPrice(Double discountedPrice) {
+<b class="fc"><i>55</i>&nbsp;        this.discountedPrice = discountedPrice;</b>
+<b class="fc"><i>56</i>&nbsp;    }</b>
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    @Override
+<i>59</i>&nbsp;    public String toString() {
+<b class="nc"><i>60</i>&nbsp;        return &quot;Product{&quot; +</b>
+<i>61</i>&nbsp;                &quot;sku=&#39;&quot; + sku + &#39;\&#39;&#39; +
+<i>62</i>&nbsp;                &quot;, name=&#39;&quot; + name + &#39;\&#39;&#39; +
+<i>63</i>&nbsp;                &quot;, price=&quot; + price +
+<i>64</i>&nbsp;                &quot;, discountedPrice=&quot; + discountedPrice +
+<i>65</i>&nbsp;                &#39;}&#39;;
+<i>66</i>&nbsp;    }
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    @Override
+<i>69</i>&nbsp;    public boolean equals(Object o) {
+<b class="nc"><i>70</i>&nbsp;        if (this == o) return true;</b>
+<b class="nc"><i>71</i>&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
+<b class="nc"><i>72</i>&nbsp;        Product product = (Product) o;</b>
+<b class="nc"><i>73</i>&nbsp;        return Objects.equals(sku, product.sku) &amp;&amp;</b>
+<b class="nc"><i>74</i>&nbsp;                Objects.equals(name, product.name) &amp;&amp;</b>
+<b class="nc"><i>75</i>&nbsp;                Objects.equals(price, product.price) &amp;&amp;</b>
+<b class="nc"><i>76</i>&nbsp;                Objects.equals(discountedPrice, product.discountedPrice);</b>
+<i>77</i>&nbsp;    }
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;    @Override
+<i>80</i>&nbsp;    public int hashCode() {
+<b class="nc"><i>81</i>&nbsp;        return Objects.hash(sku, name, price, discountedPrice);</b>
+<i>82</i>&nbsp;    }
+<i>83</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-25 20:59</div>
+</div>
+</body>
+</html>

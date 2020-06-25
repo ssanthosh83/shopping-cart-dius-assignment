@@ -1,0 +1,111 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AppleTv3For2Deal</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">org.santhosh.computerstore.offers</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AppleTv3For2Deal (org.santhosh.computerstore.offers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AppleTv3For2Deal</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (15/ 15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package org.santhosh.computerstore.offers;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.santhosh.computerstore.models.Product;
+<i>4</i>&nbsp;import org.santhosh.computerstore.models.Sku;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import java.util.List;
+<i>7</i>&nbsp;import java.util.concurrent.atomic.AtomicInteger;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;/**
+<b class="fc"><i>10</i>&nbsp; *   Algorithm for the Offer : Buy 3 Apple TVs for the price of 2</b>
+<i>11</i>&nbsp; */
+<b class="fc"><i>12</i>&nbsp;public class AppleTv3For2Deal implements Offer {</b>
+<b class="fc"><i>13</i>&nbsp;    @Override</b>
+<i>14</i>&nbsp;    public List&lt;Product&gt; modifyProducts(List&lt;Product&gt; products) {
+<b class="fc"><i>15</i>&nbsp;        AtomicInteger appleTvCount = new AtomicInteger(0);</b>
+<b class="fc"><i>16</i>&nbsp;</b>
+<b class="fc"><i>17</i>&nbsp;        products.stream().forEach(product -&gt; {</b>
+<b class="fc"><i>18</i>&nbsp;            if(product.getSku().equals(Sku.ATV.toString())){</b>
+<b class="fc"><i>19</i>&nbsp;                appleTvCount.getAndIncrement();</b>
+<b class="fc"><i>20</i>&nbsp;                if(appleTvCount.get() == 3){</b>
+<b class="fc"><i>21</i>&nbsp;                    appleTvCount.set(0); // Reinitialize the produce price with discounted Price</b>
+<b class="fc"><i>22</i>&nbsp;                    product.setDiscountedPrice(product.getPrice());</b>
+<b class="fc"><i>23</i>&nbsp;                }</b>
+<b class="fc"><i>24</i>&nbsp;            }</b>
+<b class="fc"><i>25</i>&nbsp;        });</b>
+<b class="fc"><i>26</i>&nbsp;        return products;</b>
+<i>27</i>&nbsp;    }
+<i>28</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-06-25 20:59</div>
+</div>
+</body>
+</html>
